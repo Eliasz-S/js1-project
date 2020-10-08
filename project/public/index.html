@@ -39,7 +39,38 @@
             </form>
         </div>
         <div class="header__right">
-            <a class="header__cart" href="shopping-cart.html"><img src="../src/assets/img/cart.png" alt="cart"></a>
+            <div class="header__cart">
+                <img src="../src/assets/img/cart.png" alt="cart">
+                <div class="qty">2</div>
+                <div class="cart-dropdown">
+                    <div class="cart-dropdown__checked-items">
+                        <img src="../src/assets/img/cart-dropdown-1.png" alt="pic">
+                        <div>
+                            <h3>Rebox Zane</h3>
+                            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                            <p>1 x $250</p>
+                        </div>
+                        <a href="#"><i class="fas fa-times-circle"></i></a>
+                    </div>
+                    <div class="cart-dropdown__checked-items">
+                        <img src="../src/assets/img/cart-dropdown-2.png" alt="pic">
+                        <div>
+                            <h3>Rebox Zane</h3>
+                            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                            <p>1 x $250</p>
+                        </div>
+                        <a href="#"><i class="fas fa-times-circle"></i></a>
+                    </div>
+                    <div class="cart-dropdown__sum">
+                        <div>total</div>
+                        <div>$500.00</div>
+                    </div>
+                    <div class="cart-dropdown__buttons">
+                        <a href="checkout.html">checkout</a>
+                        <a href="shopping-cart.html">go to cart</a>
+                    </div>
+                </div>
+            </div>
             <a class="header__account-bar" href="#">My Account <i class="fas fa-caret-down"></i></a>
         </div>
     </header>
@@ -206,62 +237,6 @@
                     href="#"><i class="fab fa-google-plus-g"></i></a></div>
         </div>
     </div>
-    <script>
-        
-        const NAMES = ['Mango People T-Shirt', 'Banana People T-Shirt', 'Strawberry People T-Shirt', 'Orange People T-Shirt', 'Pumpkin People T-Shirt', 'Pineapple People T-Shirt', 'Cucumber People T-Shirt', 'Tomato People T-Shirt'];
-        const PRICES = [52, 53, 55, 67, 69, 94, 23, 45];
-
-        //
-        const catalog = {
-            items: [],
-            container: null,
-            imgLocal: '../src/assets/img',
-            init() { 
-                this.container = document.querySelector('#items-catalog');
-                this.items = getItems(); 
-                this.render(); 
-            },
-            render() { 
-                let htmlStr = ''; 
-                this.items.forEach((item, index) => { 
-                    let imgURL = `${this.imgLocal}/featured-items-${index + 1}.jpg`;
-                    htmlStr += `
-                        <div class="featured-items__item">
-                            <div class="featured-items__item-top"><img src="${imgURL}" alt="featured-items-${index + 1}">
-                                <div class="add-hover-div">
-                                    <div>
-                                        <a href="#"><img src="../src/assets/img/cart_small.png" alt="cart_small">Add to Cart</a>
-                                        <a href="#"><i class="fas fa-retweet"></i></a>
-                                        <a href="#"><i class="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="featured-items__item-bottom">
-                                <div>${item.productName}</div>
-                                <div>$${item.productPrice}.00</div>
-                            </div>
-                        </div>
-                    `;
-                });
-                this.container.innerHTML = htmlStr;
-            }
-        }
-
-        catalog.init();
-        //
-
-        function createNewItem(name, price) {
-            return {
-                productName: name,
-                productPrice: price
-            }
-        }
-
-        function getItems() {
-            return NAMES.map((name, index) => createNewItem(NAMES[index], PRICES [index]));
-        }
-        
-
-    </script>
+    <script src="../src/components/catalog.js"></script>
 </body>
 </html>
