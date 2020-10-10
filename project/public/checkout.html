@@ -38,32 +38,11 @@
             </form>
         </div>
         <div class="header__right">
-            <div class="header__cart">
+            <div class="header__cart" id="toggle-cart">
                 <img src="../src/assets/img/cart.png" alt="cart">
-                <div class="qty">2</div>
-                <div class="cart-dropdown">
-                    <div class="cart-dropdown__checked-items">
-                        <img src="../src/assets/img/cart-dropdown-1.png" alt="pic">
-                        <div>
-                            <h3>Rebox Zane</h3>
-                            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                            <p>1 x $250</p>
-                        </div>
-                        <a href="#"><i class="fas fa-times-circle"></i></a>
-                    </div>
-                    <div class="cart-dropdown__checked-items">
-                        <img src="../src/assets/img/cart-dropdown-2.png" alt="pic">
-                        <div>
-                            <h3>Rebox Zane</h3>
-                            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                            <p>1 x $250</p>
-                        </div>
-                        <a href="#"><i class="fas fa-times-circle"></i></a>
-                    </div>
-                    <div class="cart-dropdown__sum">
-                        <div>total</div>
-                        <div>$500.00</div>
-                    </div>
+                <div class="qty" id="qty"></div>
+                <div class="cart-dropdown hidden">
+                    <div id="checked-items"></div>
                     <div class="cart-dropdown__buttons">
                         <a href="checkout.html">checkout</a>
                         <a href="shopping-cart.html">go to cart</a>
@@ -422,5 +401,6 @@
             <div class="socials"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a><a href="#"><i class="fab fa-google-plus-g"></i></a></div>
         </div>
     </div>
+    <script src="../src/components/cart.js"></script>
 </body>
 </html>
