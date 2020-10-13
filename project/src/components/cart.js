@@ -12,13 +12,11 @@ const cart = {
         this.qtyContainer = document.querySelector('#qty');
         this._get(this.url)
         .then(cartObject => {
-            this.items = cartObject.content
+            this.items = cartObject.content;
         })
         .then(() => {
             this._render();
             this._handleEvents();
-            this._totalPrice();
-            this._totalQty();
         })
     },
 
@@ -27,9 +25,37 @@ const cart = {
     },
 
     _handleEvents() {
-        document.querySelector('#toggle-cart').addEventListener('click', evt => {
+        document.querySelector('#toggle-cart').addEventListener('click', () => {
             this.wrapper.classList.toggle('hidden')
         })
+
+        this.container.addEventListener('click', evt => {
+            if (evt.target.name == 'remove') {
+                this._remove(evt.target.dataset.id)
+            }
+        })
+    },
+
+    _add(item) {
+        let find = this.items.find(cartItem => cartItem.productId == item.productId);
+
+        if (!find) { 
+            this.items.push(Object.assign({}, item, { amount: 1 }));
+        } else { 
+            find.amount++;
+        }
+        this._render();
+    },
+
+    _remove(id) {
+        let find = this.items.find(cartItem => cartItem.productId == id);
+
+        if (find.amount > 1) {
+            find.amount--;
+        } else {
+            this.items.splice(this.items.indexOf(find), 1)
+        }
+        this._render();
     },
 
     _render() {
@@ -43,7 +69,7 @@ const cart = {
                         <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                         <p>${item.amount} x $${item.productPrice}</p>
                     </div>
-                    <a href="#" id="clear"><i class="fas fa-times-circle"></i></a>
+                    <button data-id=${item.productId} name="remove" class="fas fa-times-circle"></button>
                 </div>
             `
         })

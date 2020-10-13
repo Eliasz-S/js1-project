@@ -38,8 +38,8 @@
             </form>
         </div>
         <div class="header__right">
-            <div class="header__cart" id="toggle-cart">
-                <img src="../src/assets/img/cart.png" alt="cart">
+            <div class="header__cart">
+                <img src="../src/assets/img/cart.png" alt="cart" id="toggle-cart">
                 <div class="qty" id="qty"></div>
                 <div class="cart-dropdown hidden">
                     <div id="checked-items"></div>
@@ -213,7 +213,12 @@
                             <div class="featured-items__item-top"><img src="${imgURL}" alt="featured-items-${index + 1}">
                                 <div class="add-hover-div">
                                     <div>
-                                        <a href="#"><img src="../src/assets/img/cart_small.png" alt="cart_small">Add to Cart</a>
+                                        <button name="add"
+                                            data-id="${item.productId}"
+                                            data-name="${item.productName}"
+                                            data-img="${imgURL}"
+                                            data-price="${item.productPrice}"
+                                        ><img src="../src/assets/img/cart_small.png" alt="cart_small">Add to Cart</button>
                                         <a href="#"><i class="fas fa-retweet"></i></a>
                                         <a href="#"><i class="far fa-heart"></i></a>
                                     </div>

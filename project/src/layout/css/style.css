@@ -223,12 +223,15 @@ body {
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase; }
-  .cart-dropdown__checked-items a {
+  .cart-dropdown__checked-items button {
     color: #c0c0c0;
     font-size: 16px;
     font-weight: 400;
-    text-decoration: none; }
-    .cart-dropdown__checked-items a:hover {
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    cursor: pointer; }
+    .cart-dropdown__checked-items button:hover {
       color: #f16d7f; }
 
 .cart-dropdown__sum {
@@ -579,6 +582,21 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between; }
+    .add-hover-div div button {
+      cursor: pointer;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      border: 1px solid #ffffff;
+      border-radius: 3px;
+      width: 125px;
+      padding: 0 11px;
+      height: 39px;
+      background-color: inherit; }
     .add-hover-div div a {
       color: #ffffff;
       text-decoration: none;
@@ -589,19 +607,7 @@ body {
       letter-spacing: 0.2px;
       border: 1px solid #ffffff;
       border-radius: 3px; }
-      .add-hover-div div a:first-of-type {
-        width: 101px;
-        padding: 0 11px;
-        height: 39px;
-        color: #ffffff;
-        text-decoration: none;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.2px; }
-      .add-hover-div div a:nth-of-type(2), .add-hover-div div a:nth-of-type(3) {
+      .add-hover-div div a:nth-of-type(1), .add-hover-div div a:nth-of-type(2) {
         width: 57px;
         height: 38px;
         border: 1px solid #ffffff;
